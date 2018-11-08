@@ -18,7 +18,37 @@ public class RomanNumeral {
         map.put('M', 1000);
     }
 
+    private boolean invalid(String s) {
+        if (s == null || s.isEmpty())
+            return true;
+
+        char prev = s.charAt(0);
+        if (!map.containsKey(prev))
+            return true;
+
+        int count = 1;
+        for (int i = 1; i < s.length(); i++) {
+            char cur = s.charAt(i);
+            if (!map.containsKey(cur))
+                return true;
+            if (cur == prev) {
+                if (count == 3) {
+                    return true;
+                }
+                count += 1;
+            } else {
+                count = 1;
+            }
+
+        }
+        return false;
+    }
+
     public int convert(String s) {
+        // TODO: throwing an exception?
+        if (invalid(s))
+            return 0;
+
         int convertedNumber = 0;
 
         for (int i = 0; i < s.length(); i++) {

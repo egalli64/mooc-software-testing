@@ -35,4 +35,30 @@ public class RomanNumeralTest {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void badNull() {
+        int result = roman.convert(null);
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    public void badEmpty() {
+        int result = roman.convert("");
+        Assertions.assertEquals(0, result);
+    }
+
+
+    @Test
+    public void badFour() {
+        int result = roman.convert("IIII");
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    public void badChar() {
+        int result = roman.convert("KI");
+        Assertions.assertEquals(0, result);
+    }
+
 }

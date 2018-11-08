@@ -1,6 +1,7 @@
 package tudelft.chocolate;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -34,5 +35,21 @@ public class ChocolateBagsTest {
     public void onlySmallBars(int small, int big, int total, int expectedResult) {
         int result = new ChocolateBags().calculate(small, big, total);
         Assertions.assertEquals(expectedResult, result);
+    }
+
+
+    @ParameterizedTest(name = "small={0}, big={1}, goal={2}, result={3}")
+    @CsvSource({ "4,1,9,4", "4,1,10,-1", "4,1,7,2" })
+    public void makeChocolateExamples(int small, int big, int goal, int expected) {
+        int result = new ChocolateBags().makeChocolate(small, big, goal);
+        Assertions.assertEquals(expected, result);
+    }
+
+
+    @ParameterizedTest(name = "input={0}, result={1}")
+    @CsvSource({ "abXYZba,ab", "abca,a", "aba,aba" })
+    public void mirrorEndsExamples(String input, String expected) {
+        String result = new ChocolateBags().mirrorEnds(input);
+        Assertions.assertEquals(expected, result);
     }
 }

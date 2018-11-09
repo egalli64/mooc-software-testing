@@ -10,8 +10,7 @@ public class Mirror {
         for (; begin < end; begin++, end--) {
             if (string.charAt(begin) == string.charAt(end)) {
                 mirror += String.valueOf(string.charAt(end));
-            }
-            else {
+            } else {
                 break;
             }
         }

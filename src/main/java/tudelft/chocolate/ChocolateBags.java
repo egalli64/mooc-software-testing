@@ -21,19 +21,4 @@ public class ChocolateBags {
             return -1;
         return goal;
     }
-
-    public String mirrorEnds(String string) {
-        String mirror = "";
-        int begin = 0;
-        int end = string.length() - 1;
-        for (; begin < end; end--) {
-            if (string.charAt(begin) == string.charAt(end)) {
-                mirror += String.valueOf(string.charAt(end));
-                begin += 1;
-            } else {
-                break;
-            }
-        }
-        return begin == end ? string : mirror;
-    }
 }

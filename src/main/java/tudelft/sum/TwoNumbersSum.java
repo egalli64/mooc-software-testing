@@ -7,7 +7,7 @@ import java.util.List;
 // Source: https://leetcode.com/problems/add-two-numbers/description/
 class TwoNumbersSum {
 
-    public List<Integer> addTwoNumbers(List<Integer> first, List<Integer> second) {
+    public static List<Integer> addTwoNumbers(List<Integer> first, List<Integer> second) {
         Collections.reverse(first);
         Collections.reverse(second);
 

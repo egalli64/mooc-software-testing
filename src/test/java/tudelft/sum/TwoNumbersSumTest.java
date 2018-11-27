@@ -1,13 +1,13 @@
 package tudelft.sum;
 
-import javafx.beans.binding.IntegerBinding;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-public class TwoNumbersSumTest {
+class TwoNumbersSumTest {
 
     private static TwoNumbersSum adder = new TwoNumbersSum();
 
@@ -26,7 +26,7 @@ public class TwoNumbersSumTest {
     @Test
     void carryWhenDifferentlySized() {
         List<Integer> lhs = Arrays.asList(4, 2);
-        List<Integer> rhs = Arrays.asList(8);
+        List<Integer> rhs = Collections.singletonList(8);
 
         List<Integer> result = adder.addTwoNumbers(lhs, rhs);
 
@@ -38,7 +38,7 @@ public class TwoNumbersSumTest {
     @Test
     void carryExtra() {
         List<Integer> lhs = Arrays.asList(9, 2);
-        List<Integer> rhs = Arrays.asList(8);
+        List<Integer> rhs = Collections.singletonList(8);
 
         List<Integer> result = adder.addTwoNumbers(lhs, rhs);
 

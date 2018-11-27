@@ -12,12 +12,13 @@ public class InvoiceFilter {
 
         List<Invoice> filtered = new ArrayList<>();
 
-        for(Invoice inv : allInvoices) {
-            if(inv.getValue() < 100.0)
+        for (Invoice inv : allInvoices) {
+            if (inv.getValue() < 100.0)
                 filtered.add(inv);
         }
 
-        return filtered;
+        invoiceDao.close();
 
+        return filtered;
     }
 }

@@ -80,11 +80,11 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
+                <!--configuration>
                     <systemPropertyVariables>
                         <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
                     </systemPropertyVariables>
-                </configuration>
+                </configuration-->
             </plugin>
 
             <plugin>

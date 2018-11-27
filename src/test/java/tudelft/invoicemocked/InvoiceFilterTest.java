@@ -22,8 +22,8 @@ public class InvoiceFilterTest {
         InvoiceFilter filter = new InvoiceFilter(dao);
         List<Invoice> result = filter.filter();
 
-        Assertions.assertEquals(mauricio, result.get(0));
         Assertions.assertEquals(1, result.size());
+        Assertions.assertEquals(mauricio, result.get(0));
     }
 
 }

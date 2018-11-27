@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class InvoiceFilterTest {
+class InvoiceFilterTest {
     @Test
     void filterInvoices() {
 
@@ -18,11 +18,10 @@ public class InvoiceFilterTest {
 
         InvoiceFilter filter = new InvoiceFilter();
         List<Invoice> result = filter.filter();
+        dao.dropInvoices();
 
-        Assertions.assertEquals(mauricio, result.get(0));
         Assertions.assertEquals(1, result.size());
-
-        dao.close();
+        Assertions.assertEquals(mauricio, result.get(0));
     }
 
 }

@@ -20,12 +20,15 @@ public class Invoice {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Invoice invoice = (Invoice) o;
 
-        if (Double.compare(invoice.value, value) != 0) return false;
+        if (Double.compare(invoice.value, value) != 0)
+            return false;
         return customer != null ? customer.equals(invoice.customer) : invoice.customer == null;
     }
 

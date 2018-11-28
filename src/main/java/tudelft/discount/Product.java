@@ -6,25 +6,25 @@ public class Product {
     private double price;
     private String category;
 
-    public Product (String name, double price, String category) {
+    public Product(String name, double price, String category) {
         this.name = name;
         this.price = price;
         this.category = category;
     }
 
-    public String getName () {
+    public String getName() {
         return name;
     }
 
-    public double getPrice () {
+    public double getPrice() {
         return price;
     }
 
-    public String getCategory () {
-        return category;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public void setPrice (double price) {
-        this.price = price;
+    public String getCategory() {
+        return category;
     }
 }
